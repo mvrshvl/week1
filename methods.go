@@ -216,17 +216,16 @@ func getOnesMaps(in []int) map[int]int {
 	return m
 }
 
+//ключ - число
+//значение - сколько раз оно встречается во 2 массиве
 func getTwosMaps(in1, in2 []int) map[int]int {
 
-	m1 := make(map[int]int)
 	m2 := make(map[int]int)
 	out := make(map[int]int)
 	for elem := range in2 {
 		m2[in2[elem]]++
 	}
 	for elem := range in1 {
-		m1[in1[elem]]++
-
 		_, ok := m2[in1[elem]]
 		if ok {
 			out[in1[elem]]++
