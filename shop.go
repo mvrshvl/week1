@@ -65,15 +65,6 @@ func sell(in_order_id int, in_sum int, users map[string]int, orders map[int]stri
 	}
 }
 
-func getUserMoney(in string, users map[string]int) int {
-	money, exist := users[in]
-	if exist {
-		return money
-	} else {
-		return 0
-	}
-}
-
 func sortByKey(mode bool, users map[string]int) {
 	var keys []string
 	for login, _ := range users {

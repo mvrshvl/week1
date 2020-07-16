@@ -1,7 +1,6 @@
 package main
 
 import (
-	"math/rand"
 	"sort"
 	"strings"
 )
@@ -133,8 +132,7 @@ func sortString(in []string, mode bool) []string {
 	return in
 }
 
-// не понял какая сортировка нужна, поэтому на всякий написал свою
-
+/*
 func quickSortInt(in []int, flag bool) []int {
 	if len(in) < 2 {
 		return in
@@ -198,7 +196,7 @@ func quickSortString(in []string, flag bool) []string {
 
 	return in
 }
-
+*/
 /*------------------------------------------------------------------*/
 
 func countWords(s string) map[string]int {
@@ -218,34 +216,26 @@ func getOnesMaps(in []int) map[int]int {
 	return m
 }
 
-//тут вообще не понял зачем мапы, может как то задачу по другому понял..
 func getTwosMaps(in1, in2 []int) map[int]int {
-	m := make(map[int]int)
-	for elem1 := range in1 {
-		flag := false
-		for elem2 := range in2 {
-			if in1[elem1] == in2[elem2] {
-				flag = true
-				break
-			}
-		}
-		if flag == true {
-			m[in1[elem1]]++
-		}
-	}
-	return m
-}
 
-//
-//func que23_(in1,in2 map[int]int)(out []int){
-//	for key1, _ := range in1 {
-//		publ ,ok := in2[key1]
-//		if ok {
-//			out = append(out,publ)
-//		}
-//	}
-//	return out
-//}
+	m1 := make(map[int]int)
+	m2 := make(map[int]int)
+	out := make(map[int]int)
+	for elem := range in2 {
+		m2[in2[elem]]++
+	}
+	for elem := range in1 {
+		m1[in1[elem]]++
+
+		_, ok := m2[in1[elem]]
+		if ok {
+			out[in1[elem]]++
+		}
+
+	}
+
+	return out
+}
 
 //основная
 func fibonacci(i int, m map[int]int) int {

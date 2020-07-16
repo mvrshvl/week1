@@ -31,8 +31,8 @@ var (
 		"TWO TWO " +
 		"THREE THREE THREE " +
 		"FOUR FOUR FOUR FOUR"
-	numbers1 = []int{1, 6, 3, 4, 5, 6}
-	numbers2 = []int{1, 2, 3, 4, 7, 8, 9, 10, 11}
+	numbers1 = []int{1, 6, 1, 3, 4, 5, 6}
+	numbers2 = []int{1, 2, 1, 3, 4, 7, 8, 9, 10, 11}
 	i_fib    = 10
 	my_list  = []string{"apple", "orange"}
 	add_list = map[string]int{
@@ -104,10 +104,10 @@ func main() {
 	fmt.Println("OUT", swapPair(a))
 
 	fmt.Println("\n\n1.15 INT\n", "IN", a)
-	fmt.Println("OUT <", quickSortInt(a, true))
-	fmt.Println("OUT >", quickSortInt(a, false))
+	fmt.Println("OUT <", sortInt(a, true))
+	fmt.Println("OUT >", sortInt(a, false))
 	fmt.Println("\n\n1.15 STRING\n", "IN", []string{"ba", "aa", "ac", "s", "q"})
-	fmt.Println("OUT", quickSortString([]string{"ba", "aa", "ac", "s", "q"}, true))
+	fmt.Println("OUT", sortString([]string{"ba", "aa", "ac", "s", "q"}, true))
 
 	fmt.Println("\n\n2.1\n", "IN", text)
 	fmt.Println("OUT", countWords(text))
