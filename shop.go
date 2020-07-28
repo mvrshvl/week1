@@ -65,15 +65,16 @@ func sell(in_order_id int, in_sum int, users map[string]int, orders map[int]stri
 	}
 }
 
-func sortByKey(mode bool, users map[string]int) {
+func sortByKey(mode bool, users map[string]int) (out []string) {
 	var keys []string
 	for login, _ := range users {
 		keys = append(keys, login)
 	}
 	sortByKey_(keys, mode)
 	for _, id := range keys {
-		fmt.Println(id, users[id])
+		out = append(out, fmt.Sprintf("%v:%v", id, users[id]))
 	}
+	return out
 }
 
 func sortByKey_(in []string, mode bool) []string {
@@ -85,7 +86,7 @@ func sortByKey_(in []string, mode bool) []string {
 	return in
 }
 
-func sortByValue(mode bool, users map[string]int) {
+func sortByValue(mode bool, users map[string]int) (out []string) {
 	var (
 		keys   []string
 		values []int
@@ -99,8 +100,10 @@ func sortByValue(mode bool, users map[string]int) {
 	keys, values = sortByValue_(keys, values, mode)
 
 	for i := 0; i < len(values); i++ {
-		fmt.Println(keys[i], values[i])
+		out = append(out, fmt.Sprintf("%v:%v", keys[i], values[i]))
+
 	}
+	return out
 }
 
 func sortByValue_(keys []string, values []int, mode bool) (out_keys []string, out_values []int) {
@@ -140,3 +143,29 @@ func sortByValue_(keys []string, values []int, mode bool) (out_keys []string, ou
 
 	return keys, values
 }
+
+//// забыл написать когда сдавал, непонятно как. невнимательность она такая. написал для себя.
+//// дописано после дедлайна
+//func updateProductName(in map[string]string, products map[string]int) {
+//	for name, newName := range in {
+//		_, ok := products[name]
+//		if ok && len(newName)>0{
+//			products[newName] = products[name]
+//			delete(products,name)
+//		}
+//	}
+//}
+//// дописано после дедлайна
+//func addUser(name string,money int, user map[string]int) {
+//	_, ok := user[name]
+//	if !ok && len(name)>0 {
+//		user[name] = money
+//	}
+//}
+//// дописано после дедлайна
+//func updateBalance(name string,money int,user map[string]int){
+//	_, ok := user[name]
+//	if ok && len(name)>0 {
+//		user[name] = money
+//	}
+//}
