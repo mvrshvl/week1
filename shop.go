@@ -144,28 +144,30 @@ func sortByValue_(keys []string, values []int, mode bool) (out_keys []string, ou
 	return keys, values
 }
 
-//// забыл написать когда сдавал, непонятно как. невнимательность она такая. написал для себя.
-//// дописано после дедлайна
-//func updateProductName(in map[string]string, products map[string]int) {
-//	for name, newName := range in {
-//		_, ok := products[name]
-//		if ok && len(newName)>0{
-//			products[newName] = products[name]
-//			delete(products,name)
-//		}
-//	}
-//}
-//// дописано после дедлайна
-//func addUser(name string,money int, user map[string]int) {
-//	_, ok := user[name]
-//	if !ok && len(name)>0 {
-//		user[name] = money
-//	}
-//}
-//// дописано после дедлайна
-//func updateBalance(name string,money int,user map[string]int){
-//	_, ok := user[name]
-//	if ok && len(name)>0 {
-//		user[name] = money
-//	}
-//}
+// забыл написать когда сдавал, непонятно как. невнимательность она такая. написал для себя.
+// дописано после дедлайна
+func updateProductName(in map[string]string, products map[string]int) {
+	for name, newName := range in {
+		_, ok := products[name]
+		if ok && len(newName) > 0 {
+			products[newName] = products[name]
+			delete(products, name)
+		}
+	}
+}
+
+// дописано после дедлайна
+func addUser(name string, money int, user map[string]int) {
+	_, ok := user[name]
+	if !ok && len(name) > 0 {
+		user[name] = money
+	}
+}
+
+// дописано после дедлайна
+func updateBalance(name string, money int, user map[string]int) {
+	_, ok := user[name]
+	if ok && len(name) > 0 {
+		user[name] = money
+	}
+}

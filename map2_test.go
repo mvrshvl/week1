@@ -119,151 +119,148 @@ func TestAddItem(t *testing.T) {
 	}
 }
 
-//как то забыл написать 3 простых метода, исправленное лежит в другой ветке
-//func TestChangePrice(t *testing.T) {
-//
-//	new := map[string]int{}
-//	updateProduct(map[string]int{}, map[string]int{})
-//
-//	if !reflect.DeepEqual(new, map[string]int{}) {
-//		t.Fatal()
-//	}
-//
-//	new = map[string]int{"":1}
-//	products = map[string]int{}
-//	updateProduct(new, products)
-//
-//	if !reflect.DeepEqual(products, map[string]int{}) {
-//		t.Fatal()
-//	}
-//
-//	new = map[string]int{"a":5}
-//	products = map[string]int{
-//		"a":     1,
-//		"b":    10,
-//	}
-//	updateProduct(new, products)
-//
-//	if !reflect.DeepEqual(products, map[string]int{
-//		"a":     5,
-//		"b":    10,
-//	}) {
-//		t.Fatal(products)
-//	}
-//
-//	new = map[string]int{"xxx":5}
-//	products = map[string]int{
-//		"a":     1,
-//		"b":    10,
-//	}
-//	updateProduct(new, products)
-//
-//	if !reflect.DeepEqual(products, map[string]int{
-//		"a":     1,
-//		"b":    10,
-//	}) {
-//		t.Fatal()
-//	}
-//}
-//
-//func TestChangeName(t *testing.T) {
-//
-//	new := map[string]string{}
-//	shop:=map[string]int{}
-//	updateProductName(new, shop)
-//
-//	if !reflect.DeepEqual(shop, map[string]int{}) {
-//		t.Fatal()
-//	}
-//	shop= map[string]int{"a":10}
-//	new = map[string]string{ "a":""}
-//	updateProductName(new,shop)
-//
-//	if !reflect.DeepEqual(shop, map[string]int{"a":10}) {
-//		t.Fatal()
-//	}
-//
-//	new = map[string]string{"a":"aa"}
-//	shop = map[string]int{"a":1,"b":10}
-//	updateProductName(new,shop )
-//
-//	if !reflect.DeepEqual(shop, map[string]int{"aa":1,"b":10}) {
-//		t.Fatal()
-//	}
-//
-//	new = map[string]string{"xxx":"a"}
-//	shop =  map[string]int{"a":1,"b":10}
-//		updateProductName(new,shop)
-//
-//	if !reflect.DeepEqual(shop, map[string]int{"a":1,"b":10}) {
-//		t.Fatal()
-//	}
-//}
-//
-//func TestAddAccount(t *testing.T) {
-//
-//	users = map[string]int{
-//	}
-//
-//	addUser("",10,users)
-//
-//	if !reflect.DeepEqual(users, map[string]int{}) {
-//		t.Fatal()
-//	}
-//
-//	users = map[string]int{
-//		"a" : 1,
-//		"b" : 10,
-//	}
-//
-//	addUser("a",10,users)
-//	if !reflect.DeepEqual(users, map[string]int{"a":1,"b":10}) {
-//		t.Fatal()
-//	}
-//
-//	addUser("xxx",100,users)
-//	if !reflect.DeepEqual(users, map[string]int{"a":1,"b":10,"xxx":100}) {
-//		t.Fatal()
-//	}
-//
-//}
-//
-//func TestChangeBalance(t *testing.T) {
-//
-//	users = map[string]int{
-//	}
-//
-//	updateBalance("",10,users)
-//
-//	if !reflect.DeepEqual(users, map[string]int{}) {
-//		t.Fatal()
-//	}
-//
-//	users = map[string]int{
-//		"a" : 1,
-//		"b" : 10,
-//	}
-//
-//	updateBalance("a",10,users)
-//	if !reflect.DeepEqual(users, map[string]int{"a":10,"b":10}) {
-//		t.Fatal()
-//	}
-//
-//	users = map[string]int{
-//		"a" : 1,
-//		"b" : 10,
-//	}
-//
-//	updateBalance("a",1,users)
-//	if !reflect.DeepEqual(users, map[string]int{"a":1,"b":10}) {
-//		t.Fatal()
-//	}
-//
-//	updateBalance("xxx",100,users)
-//	if !reflect.DeepEqual(users, map[string]int{"a":1,"b":10}) {
-//		t.Fatal()
-//	}
-//}
+func TestChangePrice(t *testing.T) {
+
+	new := map[string]int{}
+	updateProduct(map[string]int{}, map[string]int{})
+
+	if !reflect.DeepEqual(new, map[string]int{}) {
+		t.Fatal()
+	}
+
+	new = map[string]int{"": 1}
+	products = map[string]int{}
+	updateProduct(new, products)
+
+	if !reflect.DeepEqual(products, map[string]int{}) {
+		t.Fatal()
+	}
+
+	new = map[string]int{"a": 5}
+	products = map[string]int{
+		"a": 1,
+		"b": 10,
+	}
+	updateProduct(new, products)
+
+	if !reflect.DeepEqual(products, map[string]int{
+		"a": 5,
+		"b": 10,
+	}) {
+		t.Fatal(products)
+	}
+
+	new = map[string]int{"xxx": 5}
+	products = map[string]int{
+		"a": 1,
+		"b": 10,
+	}
+	updateProduct(new, products)
+
+	if !reflect.DeepEqual(products, map[string]int{
+		"a": 1,
+		"b": 10,
+	}) {
+		t.Fatal()
+	}
+}
+
+func TestChangeName(t *testing.T) {
+
+	new := map[string]string{}
+	shop := map[string]int{}
+	updateProductName(new, shop)
+
+	if !reflect.DeepEqual(shop, map[string]int{}) {
+		t.Fatal()
+	}
+	shop = map[string]int{"a": 10}
+	new = map[string]string{"a": ""}
+	updateProductName(new, shop)
+
+	if !reflect.DeepEqual(shop, map[string]int{"a": 10}) {
+		t.Fatal()
+	}
+
+	new = map[string]string{"a": "aa"}
+	shop = map[string]int{"a": 1, "b": 10}
+	updateProductName(new, shop)
+
+	if !reflect.DeepEqual(shop, map[string]int{"aa": 1, "b": 10}) {
+		t.Fatal()
+	}
+
+	new = map[string]string{"xxx": "a"}
+	shop = map[string]int{"a": 1, "b": 10}
+	updateProductName(new, shop)
+
+	if !reflect.DeepEqual(shop, map[string]int{"a": 1, "b": 10}) {
+		t.Fatal()
+	}
+}
+
+func TestAddAccount(t *testing.T) {
+
+	users = map[string]int{}
+
+	addUser("", 10, users)
+
+	if !reflect.DeepEqual(users, map[string]int{}) {
+		t.Fatal()
+	}
+
+	users = map[string]int{
+		"a": 1,
+		"b": 10,
+	}
+
+	addUser("a", 10, users)
+	if !reflect.DeepEqual(users, map[string]int{"a": 1, "b": 10}) {
+		t.Fatal()
+	}
+
+	addUser("xxx", 100, users)
+	if !reflect.DeepEqual(users, map[string]int{"a": 1, "b": 10, "xxx": 100}) {
+		t.Fatal()
+	}
+
+}
+
+func TestChangeBalance(t *testing.T) {
+
+	users = map[string]int{}
+
+	updateBalance("", 10, users)
+
+	if !reflect.DeepEqual(users, map[string]int{}) {
+		t.Fatal()
+	}
+
+	users = map[string]int{
+		"a": 1,
+		"b": 10,
+	}
+
+	updateBalance("a", 10, users)
+	if !reflect.DeepEqual(users, map[string]int{"a": 10, "b": 10}) {
+		t.Fatal()
+	}
+
+	users = map[string]int{
+		"a": 1,
+		"b": 10,
+	}
+
+	updateBalance("a", 1, users)
+	if !reflect.DeepEqual(users, map[string]int{"a": 1, "b": 10}) {
+		t.Fatal()
+	}
+
+	updateBalance("xxx", 100, users)
+	if !reflect.DeepEqual(users, map[string]int{"a": 1, "b": 10}) {
+		t.Fatal()
+	}
+}
 
 func TestSortAccounts(t *testing.T) {
 	testCases := []struct {
